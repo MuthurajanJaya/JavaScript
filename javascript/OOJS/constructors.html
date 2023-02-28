@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Function Constructors</title>
+</head>
+
+<body>
+    <script>
+        let Person = function (name, gender, birthYear) { //Person is constructors here
+            this.name = name;
+            this.gender = gender;
+            this.birthYear = birthYear;
+            this.calBirthYear = function () {
+                let age = new Date().getFullYear = this.birthYear;
+                console.log(age);
+            }
+        }
+
+        let jai = new Person("Jai", "Male", 2001);
+        /* Steps that new operator do:
+        1. let jai={} -> Creates an empty object internally
+        2. this = jai
+            jai.name="Jai"
+            jai.gender="Male"
+            jai.birthYear=2001
+            jai.calbirthYear=f(){}
+        3. return the object*/
+
+        jai.calBirthYear();
+        console.log(jai);
+
+        let anu = new Person("Anu", "Female", 2001);
+        anu.calBirthYear();
+        console.log(anu);
+
+        let janu = new Person("Janu", "Female", 2025);
+        console.log(janu);
+
+
+        class Employee {
+
+            name;
+
+            constructor(name) {
+                this.name = name;
+            }
+
+            introduceSelf() {
+                console.log(`Hi! I'm ${this.name}`);
+            }
+
+        }
+
+        const giles = new Employee('Giles');
+        giles.introduceSelf();
+
+        //OMITTING CONSTRUCTORS
+        class Animal {
+
+            sleep() {
+                console.log('zzzzzzz');
+            }
+
+        }
+
+        const spot = new Animal();
+
+        spot.sleep();
+
+    </script>
+</body>
+
+</html>

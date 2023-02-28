@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <button>Press me</button>
+
+    <!-- Best to implement JS code in body -->
+    <script>
+        alert("Hi User Please click ok to continue");
+        alert("I'm kidding just click ok again");
+        console.log("Hello I'm building JS");
+
+        const button = document.querySelector("button");
+
+        function greeting() {
+        const name = prompt("What is your name?");
+        alert(`Hello ${name}, nice to see you!`);
+        }
+
+        button.addEventListener("click", greeting);
+
+        //declaring String
+        var stringExample="Example"//Here stringExample is String
+        var stringExample=new String("Example")//Here strinExample is Object beacuse of new keyword
+        console.log(stringExample);
+
+        //use of backtick
+        const name="Jai"
+        const greet=`Hello ${name}`
+        console.log(greet);
+
+        stringExample.length//to find the length of the string
+
+        //indexOf()
+        var string="Example";
+        var string2=string.indexOf("a"); //will return -1 if not present in the value
+        var string2=string.indexOf("a");//will check for the first occurence from 1(first) index
+        console.log(string2);
+
+        //lastIndexOf()
+        lastindex="lastindex"
+        lastindex1=string.lastIndexOf("i"); //will return -1 if not present in the value
+        console.log(lastindex1);
+        
+        //search()
+        var string3="Hi user hope u r doing good"
+        var string4=string3.search('r')
+        console.log(string4)
+
+        //slice()
+        var string4=string3.slice(0,13)
+        console.log(string4)
+
+        //substring()
+        console.log(string3.substring(0,15))
+
+        //substr()
+        console.log(string4.substr(0,5))
+
+        //replace()
+        console.log(string4.replace("i","Hello"))
+
+        //toUpperCase()
+        console.log(string.toUpperCase())
+
+        //toLowerCase()
+        console.log(string4.toLowerCase())
+
+        //concat()
+        console.log(string.concat(string4))
+
+        //trim()
+        string5="    Hello user    "
+        console.log(string5.trim())
+
+        //charAt()
+        console.log(string4.charAt(3))
+
+        //charCodeAt()
+        console.log(string4.charCodeAt(5))
+
+        //codePointAt()
+        console.log(string4.codePointAt(2))
+
+        //constructors
+        console.log(string4.constructor)
+
+        //endsWith()
+        console.log(string4.endsWith("hope"))
+
+        //startsWith()
+        console.log(string4.startsWith("hope"))
+
+        //fromCharCode()
+        console.log(String.fromCharCode(72, 69, 76, 76, 79))
+
+        //includes()
+        string6="This is a simple paragraph"
+        console.log(string6.includes("simple"))
+
+        //localeCompare()
+        var string7="Ja"
+        var string8="aJ"
+        console.log(string7.localeCompare(string8))
+
+        //match()
+        let matchy="Lets find out the matching one"
+        console.log(matchy.match("out"))
+
+        //repeat()
+        console.log(matchy.repeat(2))
+
+        //split()
+        console.log(matchy.split(" "))
+
+        //toString()
+        var checkString="10"
+        console.log(checkString.toString())
+
+        //trimEnd()
+        var ends="    Hello    "
+        console.log(ends.trimEnd())
+
+        //trimStart()
+        console.log(ends.trimStart())
+
+        //valueOf()
+        result=ends.valueOf()
+        console.log(result)
+
+        var sampleStr="My name is Jayabharathi" //Expected output: "Jayabharathi is name My"
+        sampleStr=sampleStr.split(" ").reverse().join(" ")
+        console.log(sampleStr)
+</script>
+</body>
+</html>

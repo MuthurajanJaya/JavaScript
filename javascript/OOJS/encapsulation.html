@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encapsulation in JS</title>
+</head>
+
+<body>
+    <script>
+        class Employee {
+
+            name;
+
+            constructor(name) {
+                this.name = name;
+            }
+
+            introduceSelf() {
+                console.log(`Hi! I'm ${this.name}`);
+            }
+
+        }
+        // const giles = new Employee('Giles');
+        // giles.introduceSelf();
+
+        class Student extends Employee {
+
+            #year;
+
+            constructor(name, year) {
+                super(name);
+                this.#year = year;
+            }
+
+
+            introduceSelf() {
+                console.log(`Hi! I'm ${this.name}, and I'm in year ${this.#year}.`);
+            }
+
+            canStudyArchery() {
+                return this.#year > 1;
+            }
+
+        }
+
+        const summers = new Student('Summers', 2);
+        summers.introduceSelf();
+        summers.canStudyArchery();
+
+        //summers.#year;// Can't access outside the class because of private variable/encapsulation
+
+        // PRIVATE METHODS
+        class Example {
+            somePublicMethod() {
+                this.#somePrivateMethod();
+            }
+
+            #somePrivateMethod() {
+                console.log('You called me?');
+            }
+        }
+
+        const myExample = new Example();
+
+        myExample.somePublicMethod();
+
+        //myExample.#somePrivateMethod(); // SyntaxError
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance In JS</title>
+</head>
+
+<body>
+    <script>
+        /*let user={
+            name:"Jai",//
+            Domain: "LAMP"//these are data
+            
+            addUser(){
+
+            },
+            removeUser(){
+
+            }//these are behaviour
+        }*/
+
+
+
+        // INHERITANCE
+        class Employee {
+
+            name;
+
+            constructor(name) {
+                this.name = name;
+            }
+
+            introduceSelf() {
+                console.log(`Hi! I'm ${this.name}`);
+            }
+
+        }
+        const giles = new Employee('Giles');
+        giles.introduceSelf();
+
+        class Professor extends Employee {
+
+            teaches;
+
+            constructor(name, teaches) {
+                super(name);
+                this.teaches = teaches;
+            }
+
+            introduceSelf() {
+                console.log(`My name is ${this.name}, I'm in ${this.teaches} team.`);
+            }
+
+            grade(paper) {
+                const grade = Math.floor(Math.random() * (5 - 1) + 1);
+                console.log(grade);
+            }
+
+        }
+        const ajay = new Professor('Ajay', 'LAMP');
+        ajay.introduceSelf();
+        ajay.grade('my paper');
+
+    </script>
+</body>
+</html>

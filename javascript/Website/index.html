@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+   <title>Website Task</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+
+   <style type="text/css">
+      * {
+         margin: 0;
+         transition: 0.5s;
+         color: #fff;
+         overflow: hidden;
+         font-family: 'Fredoka One', cursive;
+      }
+
+      header {
+         width: 100%;
+         height: 100vh;
+         background-color: black;
+      }
+
+      .logo {
+         color: #fff;
+         font-size: 35px;
+         letter-spacing: 1px;
+         cursor: pointer;
+      }
+
+      span {
+         color: #19690e;
+      }
+
+      ul {
+         margin-top: 20px;
+         font-family: "Chivo Mono", monospace;
+         display: flex;
+         gap: 60px;
+         align-items: center;
+         justify-content: center;
+         padding-top: 0px;
+         padding-left: 0%;
+         padding-right: 0%;
+      }
+
+      ul li {
+         list-style: none;
+      }
+
+      ul li a {
+         font-size: 15px;
+         font-weight: 500;
+         text-decoration: none;
+         text-transform: mixed;
+         color: #fff;
+         padding: 10px;
+         transition: 0.3s ease;
+      }
+
+      ul:hover li a {
+         color: #19690e;
+      }
+
+      ul:hover li a:not(:hover) {
+         color: #fff;
+         opacity: 0.3;
+         filter: blur(2px);
+      }
+
+      /*.active
+{
+color: #30edf4;
+}*/
+      .container {
+         width: 1200px;
+         height: 100%;
+         margin: auto;
+         display: flex;
+      }
+
+      .container h1 {
+         font-size: 80px;
+         padding-top: 100px;
+         color: #19690e;
+      }
+
+      .container p {
+         padding-top: 20px;
+         padding-right: 20px;
+         line-height: 30px;
+         font-size: 20px;
+         color: #999;
+      }
+
+      #btn {
+         width: 200px;
+         height: 55px;
+         color: #19690e;
+         font-size: 17px;
+         margin-top: 25px;
+         margin-left: 100px;
+         cursor: pointer;
+         border-radius: 100px;
+         border: none;
+      }
+
+      #btn>a {
+         text-decoration: none;
+         color: #19690e;
+      }
+
+      #btn:hover,
+      #btn>a:hover {
+         background-color: #19690e;
+         color: #fff;
+      }
+
+      .image img {
+         padding-top: 50px;
+         height: 500px;
+         width: 500px;
+         border-radius: 100pc;
+         margin-left: 150px;
+      }
+   </style>
+</head>
+
+<body>
+
+   <header>
+      <ul>
+         <li><a href="#">Home</a></li>
+         <li><a href="#">About</a></li>
+         <li><a href="#">Service</a></li>
+         <li><a href="#">Portfolio</a></li>
+         <li><a href="#">Blog</a></li>
+         <li><a href="#">Privacy</a></li>
+         <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="container">
+         <div class="content">
+            <h1>&nbsp; Let's Sip<br>The Tastier</h1>
+            <p>We work with the most innovative solution on the<br> market to help you get the best results.</p>
+            <button id="btn" onclick="myFunc()"><a href="gettingStarted.html">Getting Started</a></button>
+         </div>
+         <div class="image">
+            <img src="img\background2.jpg" onmouseover.src="img\starbucks.jpg">
+         </div>
+      </div>
+      <script>
+         function myFunc() {
+            alert("Click OK to continue")
+         }
+      </script>
+   </header>
+</body>
+
+</html>

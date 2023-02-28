@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise in JS</title>
+</head>
+
+<body>
+    <script>
+
+        /* //Producing code
+         let promise = new Promise(function (resolved, rejected) {
+             // console.log('executed funtion executed');
+             //resolved([20,30,40])
+             // rejected("Something went wrong");
+             let xhr = new XMLHttpRequest();
+             xhr.open('GET', 'data.txt', true);
+             //xhr.open('GET','data1.txt',true);
+             xhr.send();
+ 
+             xhr.onload = function () {
+                 if (xhr.statusText === 'OK') {
+                     resolved(xhr.responseText);
+                 }
+                 else {
+                     rejected("Something went wrong... Please try again later");
+                 }
+             }
+         });
+ 
+         //Consuming code
+         promise.then(function (data) {
+             console.log(data);
+         });
+         //    promise.then(function(data){
+         //     console.log(data);
+         //    },function(error){
+         //     console.log(error);
+         //    });//here second argument of then method is optional
+         promise.catch(function (error){
+             console.log(error);
+         });
+ 
+ 
+         //console.log(promise);*/
+
+         //Combining Multiple Promise
+        const fetchPromise1 = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json');
+        const fetchPromise2 = fetch('https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/not-found');
+        const fetchPromise3 = fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json');
+
+        Promise.all([fetchPromise1, fetchPromise2, fetchPromise3])
+            .then((responses) => {
+                for (const response of responses) {
+                    console.log(`${response.url}: ${response.status}`);
+                }
+            })
+            .catch((error) => {
+                console.error(`Failed to fetch: ${error}`)
+            });
+
+
+    </script>
+</body>
+
+</html>

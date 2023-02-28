@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback in JS</title>
+</head>
+
+<body>
+    <!-- <button onclick="myFunction()">click me</button> -->
+
+    <script>
+        // function myFunction(){
+        //     var x=10;
+        //     var y=20;
+
+        //     console.log(x);
+        //     console.log(y);
+        // }
+
+        // CALLBACK
+        // function logging(){
+        //     console.log("Hi user")
+        // }
+        // //setTimeout(logging,3000);//setTimeout acts as a delay to display the output
+
+        // { //setting another the setTimeout function 
+        //     console.log("Hi user")
+        // },3000);
+
+        setTimeout(()=>{
+            console.log(1)
+            setTimeout(()=>{
+                console.log(2)
+                setTimeout(()=>{
+                    console.log(3)
+                },3000)
+            },2000)
+        },1000);
+
+        // function doStep1(init, callback) {
+        //     const result = init + 1;
+        //     callback(result);
+        // }
+
+        // function doStep2(init, callback) {
+        //     const result = init + 2;
+        //     callback(result);
+        // }
+
+        // function doStep3(init, callback) {
+        //     const result = init + 3;
+        //     callback(result);
+        // }
+
+        // function doOperation() {
+        //     doStep1(0, (result1) => {
+        //         doStep2(result1, (result2) => {
+        //             doStep3(result2, (result3) => {
+        //                 console.log(`result: ${result3}`);
+        //             });
+        //         });
+        //     });
+        // }
+
+        // doOperation();
+
+    </script>
+</body>
+
+</html>

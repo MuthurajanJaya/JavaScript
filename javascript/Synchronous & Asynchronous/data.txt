@@ -1,0 +1,3 @@
+This is a sample text which is gonna be used in the promise.html
+
+Hi user here you are to learn the promises in JS

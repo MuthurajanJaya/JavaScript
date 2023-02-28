@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return Values in JS</title>
+    <!-- Excerpt from my HTML -->
+    <script src="first.js"></script>
+    <script src="second.js"></script>
+    <script>
+        greeting();
+    </script>
+
+</head>
+
+<body>
+    <input id="textBox" type="text"></input>
+    <div id="output"></div>
+
+    <!-- <button onclick="myFunction()">Click me</button> -->
+    <script>
+        /*let myText = "Hi I'm Jai";
+        console.log(myText);
+        myText = myText.replace('Jai', 'Anu');
+        console.log(myText);
+
+        var ToMakeAString = ['I', 'love', 'chocolate', 'frogs'];
+        ToMakeAString = ToMakeAString.join(' ');
+        console.log(ToMakeAString);
+
+        var ToMakeAString = ['I', 'love', 'chocolate', 'frogs'];
+        ToMakeAString = ToMakeAString.join();
+        console.log(ToMakeAString);
+
+        function hello(name = 'Chris') {
+            console.log(`Hello ${name}!`);
+        }
+        hello('Ari');
+        hello();
+
+        (function () {
+            alert('hello');
+        })
+        const originals = [1, 2, 3];
+
+        const doubled = originals.map((item) => item * 2);
+
+        console.log(doubled, typeof doubled); // [2, 4, 6]*/
+
+        const textBox = document.querySelector("#textBox");
+        const output = document.querySelector("#output");
+
+        textBox.addEventListener('keydown', (event) => output.textContent = `You pressed "${event.key}".`);
+
+       
+
+    </script>
+</body>
+
+</html>
