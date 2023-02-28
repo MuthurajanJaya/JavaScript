@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>es6 Implementation</title>
+</head>
+
+<body>
+    <h2>JavaScript Scoping</h2>
+
+    <p><b>empName</b> is undefined outside myFunction():</p>
+
+    <p id="my-first-accessing-id"></p>
+
+    <p id="my-second-accessing-id"></p>
+
+    <p id="my-third-accessing-id"></p>
+
+    <p id="my-fourth-accessing-id"></p>
+
+    <p id="typed-Array"></p>
+
+    <script>
+        // CONSTANTS
+        const person = { age: 20 };
+        person.age = 30;
+        console.log(person.age);
+
+        // SCOPING
+        myFunction();
+        // code here can NOT use empName
+        function myFunction() {
+            let empName = "Jai";
+            document.getElementById("my-first-accessing-id").innerHTML = typeof empName + " " + empName; // code here CAN use carName
+        }
+
+        document.getElementById("my-second-accessing-id").innerHTML = typeof empName; // code here can NOT use empName
+
+        // ARROW FUNCTIONS
+        const x = (x, y) => x * y;
+        document.getElementById("my-third-accessing-id").innerHTML = x(5, 5);
+
+        // EXTENDED PARAMETER HANDLING
+        // 1. DEFAULT PARAMETER VALUES
+        let greet = (msg = 'Hi', name = 'user') => {
+            console.log(msg, name);
+        }
+        greet();
+        greet('hey');
+
+        // REST PARAMETER
+        function restParameter(x, ...y) {
+            console.log(y);
+            // y is an Array
+            return x * y.length;
+        }
+        console.log(restParameter(3, 'hello', true) === 6);
+
+        // SPREAD OPERATOR
+        function sum(firstValue, secondValue) {
+            return firstValue + secondValue;
+        }
+        let nums = [5, 4];
+        console.log(sum(...nums));
+
+        // TEMPLATE LITERALS
+        let price = 10;
+        let tax = 0.25;
+        let total = `Total: ${(price * (1 + tax)).toFixed(2)}`;
+        document.getElementById("my-fourth-accessing-id").innerHTML = total;
+
+        // DESTRUCTING ASSIGNMENT
+        let firstNum, secondNum, rest;
+        [firstNum, secondNum] = [10, 20];
+        console.log(firstNum);
+        console.log(secondNum);
+        [firstNum, secondNum, ...rest] = [10, 20, 30, 40, 50];
+        console.log(rest);
+
+        // CLASSES
+        class initialClassName {
+            constructor(value) {
+                this.Character = value
+            }
+        }
+        class childClassName extends initialClassName {
+            disp() {
+                console.log("No of Character:  " + this.Character)
+            }
+        }
+        var obj = new childClassName(130);
+        obj.disp()
+
+        // ITERATORS
+        let marks = [10, 20, 30]
+        for (let m of marks) {
+            console.log(m);
+        }
+
+        // TYPED ARRAY
+        const myArr = new Int8Array(10);
+        document.getElementById("typed-Array").innerHTML = myArr;
+    </script>
+</body>
+
+</html>
